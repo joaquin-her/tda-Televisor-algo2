@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/EntradaHDMI.cpp \
 ../src/Televisor.cpp \
 ../src/main.cpp 
 
 OBJS += \
+./src/EntradaHDMI.o \
 ./src/Televisor.o \
 ./src/main.o 
 
 CPP_DEPS += \
+./src/EntradaHDMI.d \
 ./src/Televisor.d \
 ./src/main.d 
 

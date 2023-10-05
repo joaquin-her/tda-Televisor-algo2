@@ -24,7 +24,11 @@
 #include "Televisor.h"
 int main() {
 	Televisor* tele1 = new Televisor(2);
+	tele1->getEntrada(1)->activar();
+	tele1->getEntrada(1)->desactivar();
+	tele1->getEntrada(1)->activar();
 
+	delete tele1;
 }
 
 
