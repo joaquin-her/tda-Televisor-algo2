@@ -8,7 +8,7 @@
 /*
  * DISEÑAR LA ESPECIFICACION E IMPLEMENTAR EL TDA TELEVISOR-
  * Debe proveer operaciones para:
- * 		- crear el televisor recibiendo como parametro la cantidad de entradas HDMI adicionales
+ * 		- crear el televisor recibiendo como parametro la cantidad de entradas HDMI adicionales **
  * 		- activar y desactivar una entrada HDMI
  * 		- seleccionar una entrada
  * 		- pasar al siguiente canal (+), pasar al anterior (-) y seleccionar un canal directo (con el
@@ -23,7 +23,7 @@
 
 #include "Televisor.h"
 int main() {
-	Televisor tele1 = new Televisor(2);
+	Televisor* tele1 = new Televisor(2);
 
 }
 

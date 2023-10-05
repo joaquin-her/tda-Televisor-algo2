@@ -18,7 +18,7 @@ public:
 	 * pre:
 	 * pos:
 	 */
-	Televisor();
+	Televisor(int cantidad);
 	/*
 	 * pre:
 	 * pos:
@@ -29,12 +29,12 @@ public:
 	 * pre:
 	 * pos:
 	 */
-	cambiar_canal(char direccion);
+	//cambiar_canal(char direccion);
 	/*
 	 * pre:
 	 * pos:
 	 */
-	saltar_a_canal(int canal);
+	//saltar_a_canal(int canal);
 };
 
 #endif /* TELEVISOR_H_ */
