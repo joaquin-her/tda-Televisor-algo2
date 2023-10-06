@@ -38,6 +38,10 @@ void mostrarCanal(Televisor* tele){
 void mostrarEntradas(Televisor* tele){
 	cout <<"El objeto tiene "<< tele->getCantidadEntradas()<<" entradas\n";
 }
+void mostrarEntradaMasUsada(Televisor* tele){
+	cout <<"La entrada mas usada está en el espacio de memoria: "<< tele->entradaMasUsada();
+	cout << " y tiene " << tele->entradaMasUsada()->vecesUsada() << " cantidad de usos"<< endl ;
+}
 int main() {
 	Televisor* tele1 = new Televisor(2);
 	mostrarEntradas(tele1);
@@ -59,6 +63,7 @@ int main() {
 	}
 	tele1->apagar();
 	mostrarEncendido(tele1);
+	mostrarEntradaMasUsada(tele1);
 	delete tele1;
 }
 

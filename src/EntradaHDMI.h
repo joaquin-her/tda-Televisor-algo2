@@ -11,10 +11,11 @@
 class EntradaHDMI {
 private:
 	bool esta_activa;
+	int usos;
 public:
 	/*
 	 * pre:
-	 * pos:inicializa la entrada como "desactivada"
+	 * pos:inicializa la entrada como "desactivada" y su contador de usos en 0
 	 */
 	EntradaHDMI();
 	/*
@@ -37,6 +38,11 @@ public:
 	 * pos:cambia el atrubuto de true a false
 	 */
 	void activar();
+	/*
+	 * pre:
+	 * pos:devuelve la cantidad de usos de la entrada HDMI
+	 */
+	int vecesUsada();
 };
 
 #endif /* ENTRADAHDMI_H_ */

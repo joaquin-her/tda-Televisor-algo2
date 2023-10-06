@@ -9,6 +9,7 @@
 
 EntradaHDMI::EntradaHDMI() {
 	this->esta_activa = false;
+	this->usos = 0;
 }
 
 EntradaHDMI::~EntradaHDMI() {
@@ -29,7 +30,12 @@ void EntradaHDMI::desactivar(){
 void EntradaHDMI::activar(){
 	if (!this->esta_activa){
 		this->esta_activa = true;
+		this->usos += 1;
 	}else{
 		throw "La entrada HDMI ya está activada";
 	}
+}
+
+int EntradaHDMI::vecesUsada(){
+	return this->usos;
 }

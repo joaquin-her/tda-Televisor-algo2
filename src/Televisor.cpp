@@ -77,3 +77,16 @@ void Televisor::cambiarCanal(int canal){
 	this->indice_canal = canal;
 }
 
+EntradaHDMI* Televisor::entradaMasUsada(){
+	if (this->cantidad_entradas == 0){
+		throw "El televisor no tiene entradas HDMI. Solo tiene cable";
+	}else{
+		EntradaHDMI* entradaMasUsada = this->entradas_hdmi->getDato(1);
+		for (int indice = 1; indice< this->cantidad_entradas ;indice++){
+			if (this->entradas_hdmi->getDato(indice)->vecesUsada()> entradaMasUsada->vecesUsada()){
+				entradaMasUsada = this->entradas_hdmi->getDato(indice);
+			}
+		}
+		return entradaMasUsada;
+	}
+}

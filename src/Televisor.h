@@ -81,7 +81,11 @@ public:
 	 * pos: devuelve el booleano de su atributo "encendido"
 	 */
 	bool estaEncendido();
-
+	/*
+	 * pre: tiene mas de una entrada
+	 * pos: devuelve la entrada mas usada
+	 */
+	EntradaHDMI* entradaMasUsada();
 };
 
 #endif /* TELEVISOR_H_ */
