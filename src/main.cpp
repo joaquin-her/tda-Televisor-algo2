@@ -25,24 +25,37 @@
 #include <iostream>
 using namespace std;
 
+void mostrarEncendido(Televisor* tele){
+	if (tele->estaEncendido()){
+		cout << "El televisor está encendido\n";
+	}else{
+		cout << "El televisor está apagado\n";
+	}
+}
+void mostrarCanal(Televisor* tele){
+	cout << "El canal actual es el " << tele->canalActual()<<endl;
+}
 int main() {
 	Televisor* tele1 = new Televisor(2);
 	tele1->getEntrada(1)->activar();
 	tele1->getEntrada(1)->desactivar();
 	tele1->getEntrada(1)->activar();
 	cout <<"Se creó el objeto Televisor con "<< tele1->getCantidadEntradas()<<" entradas\n";
+	tele1->encender();
+	mostrarEncendido(tele1);
 	if (tele1->estaEncendido()){
 		tele1->cambiarCanal(24);
-		tele1->cambiarArriba();
-		tele1->cambiarArriba();
-		tele1->cambiarArriba();
-		if (tele1->canalActual() == 27){
-			cout << "El canal actual es el 27";
-		}else{
-			cout << "El canal actual no es el 27";
-		}
-	}
+		mostrarCanal(tele1);
 
+		tele1->cambiarArriba();
+		mostrarCanal(tele1);
+
+		tele1->cambiarArriba();
+		tele1->cambiarArriba();
+		mostrarCanal(tele1);
+	}
+	tele1->apagar();
+	mostrarEncendido(tele1);
 	delete tele1;
 }
 

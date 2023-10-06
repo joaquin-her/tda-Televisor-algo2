@@ -15,13 +15,25 @@ Televisor::Televisor( int cantidad) {
 	for (int i = 1; i <= cantidad ; i++){
 		this->entradas_hdmi->setDato(i,new EntradaHDMI);
 	}
-	this->encendido = true;
+	this->encendido = false;
 	this->indice_canal = 1;
 }
 
 Televisor::~Televisor() {
 	delete this->entradas_hdmi;
 }
+void Televisor::encender(){
+	if (!this->encendido){
+		this->encendido = true;
+	}else{
+		throw "El televisor ya está encendido";
+	}
+}
+void Televisor::apagar(){
+	this->validarEncendido();
+	this->encendido = false;
+}
+
 void Televisor::validarEncendido(){
 	if (this->encendido){
 		return;

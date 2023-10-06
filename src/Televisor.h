@@ -33,6 +33,17 @@ public:
 	 */
 	virtual ~Televisor();
 	/*
+	 * pre: el televisor está apagado
+	 * pos: enciende el televisor
+	 */
+	void encender();
+	/*
+	 * pre: el televisor está encendido
+	 * pos: apaga el televisor
+	 */
+	void apagar();
+
+	/*
 	 * pre: el indice ingresado esta entre 1 y la cantidad de entradas
 	 * pos: devuelve un puntero a el Objeto EntradaHDMI en ese indice
 	 */
