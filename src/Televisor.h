@@ -13,12 +13,18 @@ class Televisor {
 private:
 	int cantidad_entradas;
 	Vector <EntradaHDMI* > * entradas_hdmi;
-	int canales_cable[140];
+	int indice_canal;
+	bool encendido;
+	/*
+	 * pre:
+	 * pos: arroja un error si el televisor está apagado
+	 */
+	void validarEncendido();
 
 public:
 	/*
-	 * pre:
-	 * pos:crea un objeto televisor con n cantidad de EntradasHDMI
+	 * pre: la cantidad de entradas ingresadas no es negativa
+	 * pos:crea un objeto televisor con n cantidad de EntradasHDMI y 140 canales de cable
 	 */
 	Televisor(int cantidad);
 	/*
@@ -27,21 +33,44 @@ public:
 	 */
 	virtual ~Televisor();
 	/*
-	 * pre: se aplica sobre el objeto Televisor con un indice menor a la
-	 * cantidad de EntradasHDMI
-	 * pos: devuelve el Objeto EntradaHDMI
+	 * pre: el indice ingresado esta entre 1 y la cantidad de entradas
+	 * pos: devuelve un puntero a el Objeto EntradaHDMI en ese indice
 	 */
 	EntradaHDMI* getEntrada(int indice);
 	/*
 	 * pre:
-	 * pos:
+	 * pos: devuelve un int con la cantidad de entradas que tiene el televisor
 	 */
-	//cambiar_canal(char direccion);
+	int getCantidadEntradas();
+	/*
+	 * pre: la television esta encendida
+	 * pos: devuelve un int con el valor del canal mostrado en la television
+	 *
+	 */
+	int canalActual();
 	/*
 	 * pre:
-	 * pos:
+	 * pos: cambia el canal hacia arriba incrementando el indice del canal en 1
+	 *
 	 */
-	//saltar_a_canal(int canal);
+	void cambiarArriba();
+	/*
+	 * pre:
+	 * pos: cambia el canal hacia arriba incrementando el indice del canal en 1
+	 *
+	 */
+	void cambiarAbajo();
+	/*
+	 * pre: el televisor está encendido y el canal esta entre 1 y todo 140
+	 * pos: cambia el canal hacia ese indice
+	 */
+	void cambiarCanal(int direccion);
+	/*
+	 * pre:
+	 * pos: devuelve el booleano de su atributo "encendido"
+	 */
+	bool estaEncendido();
+
 };
 
 #endif /* TELEVISOR_H_ */

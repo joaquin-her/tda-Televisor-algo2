@@ -8,12 +8,10 @@
 #include "EntradaHDMI.h"
 
 EntradaHDMI::EntradaHDMI() {
-	// TODO Auto-generated constructor stub
 	this->esta_activa = false;
 }
 
 EntradaHDMI::~EntradaHDMI() {
-	// TODO Auto-generated destructor stub
 }
 
 bool EntradaHDMI::estaActiva(){

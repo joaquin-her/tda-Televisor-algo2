@@ -11,9 +11,9 @@
  * 		- crear el televisor recibiendo como parametro la cantidad de entradas HDMI adicionales **
  * 		- activar y desactivar una entrada HDMI
  * 		- seleccionar una entrada
- * 		- pasar al siguiente canal (+), pasar al anterior (-) y seleccionar un canal directo (con el
+ * 		- todo pasar al siguiente canal (+), pasar al anterior (-) y seleccionar un canal directo (con el
  * 	numero como parametro)
- * 		- devolver la entrada mas usada
+ * 		- todo devolver la entrada mas usada
  *
  * REGLAS:
  * 		- un televisor tiene entrada de cable para 140 canales
@@ -22,11 +22,26 @@
  */
 
 #include "Televisor.h"
+#include <iostream>
+using namespace std;
+
 int main() {
 	Televisor* tele1 = new Televisor(2);
 	tele1->getEntrada(1)->activar();
 	tele1->getEntrada(1)->desactivar();
 	tele1->getEntrada(1)->activar();
+	cout <<"Se creó el objeto Televisor con "<< tele1->getCantidadEntradas()<<" entradas\n";
+	if (tele1->estaEncendido()){
+		tele1->cambiarCanal(24);
+		tele1->cambiarArriba();
+		tele1->cambiarArriba();
+		tele1->cambiarArriba();
+		if (tele1->canalActual() == 27){
+			cout << "El canal actual es el 27";
+		}else{
+			cout << "El canal actual no es el 27";
+		}
+	}
 
 	delete tele1;
 }
