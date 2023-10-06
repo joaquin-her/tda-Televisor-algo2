@@ -72,7 +72,7 @@ public:
 	 */
 	void cambiarAbajo();
 	/*
-	 * pre: el televisor está encendido y el canal esta entre 1 y todo 140
+	 * pre: el televisor está encendido y el canal esta entre 1 y 140
 	 * pos: cambia el canal hacia ese indice
 	 */
 	void cambiarCanal(int direccion);

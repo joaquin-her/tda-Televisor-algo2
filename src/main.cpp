@@ -11,7 +11,7 @@
  * 		- crear el televisor recibiendo como parametro la cantidad de entradas HDMI adicionales **
  * 		- activar y desactivar una entrada HDMI
  * 		- seleccionar una entrada
- * 		- todo pasar al siguiente canal (+), pasar al anterior (-) y seleccionar un canal directo (con el
+ * 		- pasar al siguiente canal (+), pasar al anterior (-) y seleccionar un canal directo (con el
  * 	numero como parametro)
  * 		- todo devolver la entrada mas usada
  *
@@ -35,12 +35,15 @@ void mostrarEncendido(Televisor* tele){
 void mostrarCanal(Televisor* tele){
 	cout << "El canal actual es el " << tele->canalActual()<<endl;
 }
+void mostrarEntradas(Televisor* tele){
+	cout <<"El objeto tiene "<< tele->getCantidadEntradas()<<" entradas\n";
+}
 int main() {
 	Televisor* tele1 = new Televisor(2);
+	mostrarEntradas(tele1);
 	tele1->getEntrada(1)->activar();
 	tele1->getEntrada(1)->desactivar();
 	tele1->getEntrada(1)->activar();
-	cout <<"Se creó el objeto Televisor con "<< tele1->getCantidadEntradas()<<" entradas\n";
 	tele1->encender();
 	mostrarEncendido(tele1);
 	if (tele1->estaEncendido()){
